@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #910000;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+    
+
+    <script>
+
+        const num1 = Number(prompt("enter 1st number"));
+        const num2 = Number(prompt("enter 2nd number"));
+        const num3 = Number(prompt("enter 3rd number"));
+        // check if all numbers are positive
+        if(num1 > 0 && num2 > 0 && num3 > 0) {
+            console.log(`sum is ${num1 + num2 + num3}`);
+            if(num1 === num2 && num2 === num3) {
+                console.log(`multiplication is ${num1 * num2 * num3}`);
+            }
+            // check if all numbers are negative
+        } else if(num1 < 0 && num2 < 0 && num3 < 0) {
+            console.log(`program does not work with negative numbers`);
+        } else {
+            console.log(`only positive numbers allowed`);
+        }
+    </script>
+</body>
+</html>

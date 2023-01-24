@@ -17,91 +17,91 @@
 <body>
     <script>
         // program print all numbers odd and smaller than 100
-        // for(let i = 0; i < 100; i++) {
-        //     if(i % 2 !== 0) {
-        //         console.log(i);
-        //     }
-        // }
-        // // print positive numbers smaller than 100 and even in order random order
-        // let arr = [];
-        // for(let i = 0; i < 100; i++) {
-        //     if(i % 2 === 0) {
-        //         arr.push(i);
-        //     }
-        // }
+        for(let i = 0; i < 100; i++) {
+            if(i % 2 !== 0) {
+                console.log(i);
+            }
+        }
+        // print positive numbers smaller than 100 and even in order random order
+        let arr = [];
+        for(let i = 0; i < 100; i++) {
+            if(i % 2 === 0) {
+                arr.push(i);
+            }
+        }
 
-        // let distance = prompt("enter distance");
-        // let time = prompt("enter time");
-        // // calculate average speed
-        // let speed = distance / time;
-        // console.log(`average speed is ${speed}`);
-        // if(distance === NaN || time === NaN) {};
+        let distance = prompt("enter distance");
+        let time = prompt("enter time");
+        // calculate average speed
+        let speed = distance / time;
+        console.log(`average speed is ${speed}`);
+        if(distance === NaN || time === NaN) {};
 
-        // let distance1, time1;
+        let distance1, time1;
 
-        // while(distance1 != 0) {
-        //     distance1 = Number(prompt("enter distance in KM/h"));
-        //     if(distance1 === 0) {
-        //         console.log(`0 distance`);
-        //         break;
-        //     }
+        while(distance1 != 0) {
+            distance1 = Number(prompt("enter distance in KM/h"));
+            if(distance1 === 0) {
+                console.log(`0 distance`);
+                break;
+            }
 
-        //     time1 = Number(prompt("enter time in hours"));
-        //     let average = distance1 / time1;
-        //     console.log(`average speed is ${average}`);
-        // }
+            time1 = Number(prompt("enter time in hours"));
+            let average = distance1 / time1;
+            console.log(`average speed is ${average}`);
+        }
 
         
-        // let num1 = Number(prompt("enter 1st number"));
-        // let num2 = Number(prompt("enter 2nd number"));
-        // let num3 = Number(prompt("enter 3rd number"));
-        // let num4 = Number(prompt("enter 4th number"));
-        // // check how many numbers are even
-        // let even = 0;
-        // if(num1 % 2 === 0) {
-        //     even++;
-        // }
-        // if(num2 % 2 === 0) {
-        //     even++;
-        // }
-        // if(num3 % 2 === 0) {
-        //     even++;
-        // }
-        // if(num4 % 2 === 0) {
-        //     even++;
-        // }
-        // console.log(`there are ${even} even numbers`);
-        // // check how many numbers are odd
-        // let odd = 0;
-        // if(num1 % 2 !== 0) {
-        //     odd++;
-        // }
-        // if(num2 % 2 !== 0) {
-        //     odd++;
-        // }
-        // if(num3 % 2 !== 0) {
-        //     odd++;
-        // }
-        // if(num4 % 2 !== 0) {
-        //     odd++;
-        // }
-        // console.log(`there are ${odd} odd numbers`);
+        let num1 = Number(prompt("enter 1st number"));
+        let num2 = Number(prompt("enter 2nd number"));
+        let num3 = Number(prompt("enter 3rd number"));
+        let num4 = Number(prompt("enter 4th number"));
+        // check how many numbers are even
+        let even = 0;
+        if(num1 % 2 === 0) {
+            even++;
+        }
+        if(num2 % 2 === 0) {
+            even++;
+        }
+        if(num3 % 2 === 0) {
+            even++;
+        }
+        if(num4 % 2 === 0) {
+            even++;
+        }
+        console.log(`there are ${even} even numbers`);
+        // check how many numbers are odd
+        let odd = 0;
+        if(num1 % 2 !== 0) {
+            odd++;
+        }
+        if(num2 % 2 !== 0) {
+            odd++;
+        }
+        if(num3 % 2 !== 0) {
+            odd++;
+        }
+        if(num4 % 2 !== 0) {
+            odd++;
+        }
+        console.log(`there are ${odd} odd numbers`);
 
-        // for(let i = 0; i <= 5; i++) {
-        //     let total = 0;
-        //     let sum = 0;
-        //     while(i !== 0) {
-        //         let input = Number(prompt("enter a number"));
-        //         total += input;
-        //         sum++;
-        //         if(input === 0) {
-        //             console.log(`total is ${total}`);
-        //             break;
-        //         }
-        //     }
-        //     average = total / sum;
-        //     console.log(`average is ${average}`);
-        // }
+        for(let i = 0; i <= 5; i++) {
+            let total = 0;
+            let sum = 0;
+            while(i !== 0) {
+                let input = Number(prompt("enter a number"));
+                total += input;
+                sum++;
+                if(input === 0) {
+                    console.log(`total is ${total}`);
+                    break;
+                }
+            }
+            average = total / sum;
+            console.log(`average is ${average}`);
+        }
 
         answer = '';
         let number = 0;

@@ -19,19 +19,25 @@
         switch(suite){
             case 0:
                 suite_symbol = '♠';
+                card.style.color = 'black';
+                rank.style.color = 'black';
                 break;
             case 1:
                 suite_symbol = '♥';
+                card.style.color = 'red';
+                rank.style.color = 'red';
                 break;
             case 2:
                 suite_symbol = '♦';
+                card.style.color = 'red';
+                rank.style.color = 'red';
                 break;
             case 3:
                 suite_symbol = '♣';
+                card.style.color = 'black';
+                rank.style.color = 'black';
                 break;
         }
     }
-
-        
-
 })();
+

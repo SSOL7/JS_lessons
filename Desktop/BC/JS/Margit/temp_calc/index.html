@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: goldenrod; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Temperature Converter</h1>
+
+    <label for="celsius">C</label>
+    <input type="number" name="celsius" id="celsius" placeholder="Celsius">
+
+    <label for="kelvin">K</label>
+    <input type="number" name="kelvin" id="kelvin" placeholder="Kelvin">
+
+    <label for="fahrenheit">F</label>
+    <input type="number" name="fahrenheit" id="fahrenheit" placeholder="Fahrenheit">
+
+    <script>
+        const celsiusInput = document.querySelector('#celsius');
+        const kelvinInput = document.querySelector('#kelvin');
+        const fahrenheitInput = document.querySelector('#fahrenheit');
+
+        function roundNum(num) {
+            return Math.round(num*100)/100;
+        }
+
+        function celsiusToFahrenheitAndKelvin() {
+            const cTemp = parseFloat(celsiusInput.value);
+            const fTemp = (cTemp * (9/5)) + 32;
+            const kTemp = cTemp + 273.15;
+            fahrenheitInput.value = roundNum(fTemp);
+            kelvinInput.value = roundNum(kTemp);
+        }
+
+        function kelvinToCelsiusAndFahrenheit() {
+            const kTemp = parseFloat(kelvinInput.value);
+            const cTemp = kTemp - 273.15;
+            const fTemp = (cTemp * (9/5)) + 32;
+            celsiusInput.value = roundNum(cTemp);
+            fahrenheitInput.value = roundNum(fTemp);
+        }
+
+        function fahrenheitToCelsiusAndKelvin() {
+            const fTemp = parseFloat(fahrenheitInput.value);
+            const cTemp = (fTemp - 32) * (5/9);
+            const kTemp = cTemp + 273.15;
+            celsiusInput.value = roundNum(cTemp);
+            kelvinInput.value = roundNum(kTemp);
+        }
+
+        function main() {
+            celsiusInput.addEventListener('input', celsiusToFahrenheitAndKelvin);
+            kelvinInput.addEventListener('input', kelvinToCelsiusAndFahrenheit);
+            fahrenheitInput.addEventListener('input', fahrenheitToCelsiusAndKelvin);
+        }
+
+        main();
+
+    </script>
+
+    
+</body>
+</html>

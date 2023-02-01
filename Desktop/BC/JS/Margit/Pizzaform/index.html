@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: goldenrod;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id=msg></div>
+
+<form name=form1 method=post action=check.php>
+    <table class='table table-striped' >
+        <tr ><th >Select pizza toppings</th></tr>
+        <tr ><td ><input id="meat" type=checkbox name=ckb value=2 onclick='chkcontrol(7)';> minced meat+ 2 </td>  </tr>
+        <tr ><td ><input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';> Pepperoni + 1 </td></tr>
+        <tr><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';> Cheese + 2 </td></tr>
+        <tr  ><td ><input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';> seashell + 3 </td></tr>
+        <tr ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(3)';> shrimp + 2 </td></tr>
+        <tr  ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(4)';> tomato + 2 </td></tr>
+        <tr ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(5)';> kebab + 2 </td></tr>
+        <tr  ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(6)';> feta + 2 </td></tr>
+        <tr ><td ><input id="small" type=radio name=ckb value=2 onclick='chkcontrol(7)';> Small + 2 </td>  </tr>
+        <tr ><td ><input type=radio name=ckb value=4 onclick='chkcontrol(7)';> Medium+ 4 </td>  </tr>
+        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>
+        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>
+        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>ß
+    </table>
+</form>
+    
+    
+
+    <script type="text/javascript">
+            function chkcontrol(j) {
+                let sum=0;
+                for(let i=0; i < document.form1.ckb.length; i++){
+                    
+                    if(document.form1.ckb[i].checked){
+                        sum = sum + parseInt(document.form1.ckb[i].value);
+                    }
+                    document.getElementById("msg").innerHTML="Sum :"+ sum;
+                }
+            }
+        document.getElementById("small").checked = true;
+        document.getElementById("meat").checked = true;
+    </script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,14 +81,15 @@
 
 <form name="formid">
     <select name="ddlselect" onchange="selectvalue()">
-        <option value="eat-in">Eat in</option>
+        <option value="-">-</option>
+        <option value="eatin">Eat in</option>
         <option value="takeaway">Take away</option>
-        <option value="giftdelivery">Gift delivery</option>
-        <option value="cancelorder">Cancel order</option> </select>
+        <option value="gift">Gift delivery</option> </select>
     </form>
     <p id="name"></p>
     <div id=msg></div>
     <label id="eat"></label>
+    <div id="toppings"></div>
     
     <script type="text/javascript">
         function chkcontrol(j) {
@@ -114,6 +114,7 @@
     }
         document.getElementById("large").checked = true;
         document.getElementById("meat").checked = true;
+        
     </script>
 </body>
 </html>

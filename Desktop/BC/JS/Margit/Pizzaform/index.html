@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,51 +7,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-color: goldenrod;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+        * {
+            
         }
+
+        body {
+            background-color: goldenrod;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        tr, td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        header {
+            background-color: gold;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            display: inline;
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pizzaform.html">Order pizza</a></li>
+                <li><a href="check.php">Check order</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Ordering pizza from us is simple</h1>
 
+    <p>First, enter your name:</p>
+
+    <input type="text" id="myText">
+    <button type="button" onclick="nameinput()">Confirm name</button>
+    
+    <form name=form1 method=post action=check.php>
+        <table>
+            <tr><th >Choose your pizza size</th></tr>
+            
+            <tr><td><input type=radio id="large" name=ckb value=4 onclick='chkcontrol(7)';> Large + 4 </td></tr>
+            <tr><td><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Extra large + 6 </td></tr>
+            <tr><th >Select pizza toppings</th></tr>
+            <tr><td><input id="meat" type=checkbox name=ckb value=2 onclick='chkcontrol(7)';> minced meat+ 2 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';> Pepperoni + 1 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';> Cheese + 2 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';> seashell + 3 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=2 onclick='chkcontrol(3)';> shrimp + 2 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=2 onclick='chkcontrol(4)';> tomato + 2 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=2 onclick='chkcontrol(5)';> kebab + 2 </td></tr>
+            <tr><td><input type=checkbox name=ckb value=2 onclick='chkcontrol(6)';> feta + 2 </td></tr>
+        </table>
+    </form>
+<br>
+
+<p>At last, select where you want to eat</p>
+
+<form name="formid">
+    <select name="ddlselect" onchange="selectvalue()">
+        <option value="eat-in">Eat in</option>
+        <option value="takeaway">Take away</option>
+        <option value="giftdelivery">Gift delivery</option>
+        <option value="cancelorder">Cancel order</option> </select>
+    </form>
+    <p id="name"></p>
     <div id=msg></div>
-
-<form name=form1 method=post action=check.php>
-    <table class='table table-striped' >
-        <tr ><th >Select pizza toppings</th></tr>
-        <tr ><td ><input id="meat" type=checkbox name=ckb value=2 onclick='chkcontrol(7)';> minced meat+ 2 </td>  </tr>
-        <tr ><td ><input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';> Pepperoni + 1 </td></tr>
-        <tr><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';> Cheese + 2 </td></tr>
-        <tr  ><td ><input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';> seashell + 3 </td></tr>
-        <tr ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(3)';> shrimp + 2 </td></tr>
-        <tr  ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(4)';> tomato + 2 </td></tr>
-        <tr ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(5)';> kebab + 2 </td></tr>
-        <tr  ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(6)';> feta + 2 </td></tr>
-        <tr ><td ><input id="small" type=radio name=ckb value=2 onclick='chkcontrol(7)';> Small + 2 </td>  </tr>
-        <tr ><td ><input type=radio name=ckb value=4 onclick='chkcontrol(7)';> Medium+ 4 </td>  </tr>
-        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>
-        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>
-        <tr ><td ><input type=radio name=ckb value=6 onclick='chkcontrol(7)';> Large + 6 </td>  </tr>ß
-    </table>
-</form>
+    <label id="eat"></label>
     
-    
-
     <script type="text/javascript">
-            function chkcontrol(j) {
-                let sum=0;
+        function chkcontrol(j) {
+            let sum=0;
                 for(let i=0; i < document.form1.ckb.length; i++){
-                    
                     if(document.form1.ckb[i].checked){
                         sum = sum + parseInt(document.form1.ckb[i].value);
                     }
-                    document.getElementById("msg").innerHTML="Sum :"+ sum;
+                    document.getElementById("msg").innerHTML="Pizza price :"+ sum + "€";
                 }
             }
-        document.getElementById("small").checked = true;
+
+            function selectvalue() {
+                document.getElementById('eat').innerHTML=
+                ("" +
+                formid.ddlselect[formid.ddlselect.selectedIndex].text+'</b>')
+            }
+
+            function nameinput() {
+        var x = document.getElementById("myText").value;
+        document.getElementById("name").innerHTML ='Customer name:' + '' + x;
+    }
+        document.getElementById("large").checked = true;
         document.getElementById("meat").checked = true;
     </script>
 </body>
